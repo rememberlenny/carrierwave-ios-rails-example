@@ -16,14 +16,19 @@ You can find some guidelines on how to install above [on mac][mac_guidelines] an
 - git (mac - `brew install git`, ubuntu - `apt-get install git`)
 
 
-Environment config
+Config
 ==================
+
+### Environment variables
 
 - copy .env.sample to .env `cp .env.sample .env`
 - fill your domain name and url - in local environment it's normally `localhost` and `http://localhost:3000` respectively.
 - you will need to generate your own `SECRET_KEY_BASE` by running `rake secret` and pasting the output into .env file.
 - you can omit Rollbar config in development environment.
 
+### Guardfile
+
+- copy Guardfile.sample to Guardfile `cp Guardfile.sample Guardfile`
 
 Contribution
 ============
