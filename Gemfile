@@ -11,6 +11,7 @@ gem 'uglifier'
 
 group :development do
   gem 'better_errors'
+  gem "binding_of_caller"
   gem 'guard-rails'
   gem 'guard-bundler'
   gem 'guard-rspec'
