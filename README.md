@@ -19,6 +19,10 @@ You can find some guidelines on how to install above [on mac][mac_guidelines] an
 Config
 ==================
 
+### Database
+
+- copy config/database.yml.sample to config/database.yml `cp config/database.yml.sample config/database.yml`
+
 ### Environment variables
 
 - copy .env.sample to .env `cp .env.sample .env`
