@@ -22,6 +22,10 @@ Config
 ### Database
 
 - copy config/database.yml.sample to config/database.yml `cp config/database.yml.sample config/database.yml`
+- run in terminal respectively:
+  - `rake db:create`
+  - `rake db:migrate`
+  - `rake db:seed`
 
 ### Environment variables
 
