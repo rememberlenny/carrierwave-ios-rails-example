@@ -45,3 +45,4 @@ Devise.setup do |config|
 
   # ==> Navigation configuration
   config.sign_out_via = :delete
+end
