@@ -9,6 +9,7 @@ gem 'sass-rails', '>= 5.0.0.beta1' # because of rails 4.2.0.betaX
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'devise-ios-rails', github: 'netguru/devise-ios-rails'
+gem 'carrierwave'
 
 group :development do
   gem 'better_errors'
