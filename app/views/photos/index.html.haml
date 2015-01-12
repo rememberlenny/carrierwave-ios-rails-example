@@ -1,0 +1,10 @@
+%h1 Photos
+
+%table
+  %tr
+    %th id
+    %th link to image
+
+- photos.each do |photo|
+  %td= photo.id
+  %td= link_to photo.image.url
