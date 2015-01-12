@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :photo do
-    name 'My Photo'
+    image Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'photos', 'images', 'netguru.jpg'))
   end
 end
