@@ -10,6 +10,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'devise-ios-rails', github: 'netguru/devise-ios-rails'
 gem 'carrierwave'
+gem 'decent_exposure'
 
 group :development do
   gem 'better_errors'
