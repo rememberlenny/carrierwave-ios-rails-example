@@ -13,6 +13,7 @@ gem 'uglifier'
 gem 'devise-ios-rails', github: 'netguru/devise-ios-rails'
 gem 'carrierwave'
 gem 'decent_exposure'
+gem 'activeadmin', github: 'activeadmin'
 
 group :development do
   gem 'better_errors'
