@@ -1,10 +1,13 @@
 %h1 Attachments
 
-%table
-  %tr
-    %th id
-    %th link to image
+%table.table.table-striped
+  %thead
+    %tr
+      %th id
+      %th name
 
-- attachments.each do |attachment|
-  %td= attachment.id
-  %td= link_to attachment.file, attachment.file.url
+  %tbody
+    - attachments.each do |attachment|
+      %tr
+        %td= attachment.id
+        %td= link_to attachment.file, attachment.file.url

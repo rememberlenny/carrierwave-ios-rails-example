@@ -6,6 +6,8 @@ gem 'pg'
 gem 'dotenv-rails'
 gem 'haml-rails'
 gem 'sass-rails', '>= 5.0.0.beta1' # because of rails 4.2.0.betaX
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'jquery-rails'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'devise-ios-rails', github: 'netguru/devise-ios-rails'
