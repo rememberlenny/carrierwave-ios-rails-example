@@ -1,0 +1,10 @@
+%h1 Attachments
+
+%table
+  %tr
+    %th id
+    %th link to image
+
+- attachments.each do |attachment|
+  %td= attachment.id
+  %td= link_to attachment.file, attachment.file.url
