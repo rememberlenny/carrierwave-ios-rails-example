@@ -266,6 +266,7 @@ GEM
       actionpack (>= 3.2.6, < 5)
       devise (~> 3.2)
     slop (3.6.0)
+    spring (1.2.0)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -323,5 +324,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 5.0.0.beta1)
   shoulda-matchers
+  spring
   thin
   uglifier
