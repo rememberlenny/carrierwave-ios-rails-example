@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
   devise_ios_rails_for :users
 
   root 'attachments#index'
-  resources :attachments, only: [:index, :show, :create, :destroy]
+
+  resources :attachments, only: [:index]
+
+  namespace :api, defaults: { format: 'json' } do
+    namespace :v1 do
+      resources :attachments, only: [:index, :show, :create, :destroy]
+    end
+  end
 end
