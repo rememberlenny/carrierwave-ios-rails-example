@@ -43,4 +43,18 @@ describe AttachmentsController do
 
     it { is_expected.to respond_with :ok }
   end
+
+  describe 'DELETE destroy' do
+    let!(:attachment) { create :attachment }
+
+    before do
+      delete :destroy, id: attachment
+    end
+
+    it 'removes given attachment' do
+      expect(Attachment.find_by id: attachment).to eq nil
+    end
+
+    it { is_expected.to respond_with :ok }
+  end
 end

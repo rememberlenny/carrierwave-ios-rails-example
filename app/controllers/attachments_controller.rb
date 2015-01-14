@@ -20,6 +20,11 @@ class AttachmentsController < ApplicationController
     end
   end
 
+  def destroy
+    status = attachment.destroy ? :ok : :unprocessable_entity
+    head status
+  end
+
   private
 
   def attachment_params
