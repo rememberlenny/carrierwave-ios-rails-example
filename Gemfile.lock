@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: git://github.com/netguru/devise-ios-rails.git
-  revision: 8099a57e7573bf766d252675807040861f47dd9c
+  revision: 669c964eccf9cffa48012b32cc3b6b671a51c08d
   specs:
     devise-ios-rails (0.0.12)
       active_model_serializers (= 0.9.0)
@@ -296,6 +296,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers
   activeadmin!
   better_errors
   binding_of_caller

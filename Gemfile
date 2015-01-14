@@ -15,6 +15,7 @@ gem 'carrierwave'
 gem 'decent_exposure'
 gem 'activeadmin', github: 'activeadmin'
 gem 'thin'
+gem 'active_model_serializers'
 
 group :development do
   gem 'better_errors'
