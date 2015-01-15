@@ -25,36 +25,36 @@ describe API::V1::AttachmentsController do
   describe 'GET show' do
     let(:attachment) { create :attachment }
 
-    before do
-      get :show, id: attachment.id
-    end
+    before { get :show, id: attachment.id }
 
     it { is_expected.to respond_with :ok}
     it_behaves_like 'respond with representation of attachment'
   end
 
   describe 'POST create' do
-    context 'when invalid params' do
-      let(:invalid_params) do
-        { file: nil }
-      end
+    context 'when valid params' do
+      let(:valid_params) { attributes_for :attachment }
 
-      before do
-        post :create, attachment: invalid_params
-      end
+      before { post :create, attachment: valid_params }
+
+      it { is_expected.to respond_with :created }
+      it_behaves_like 'respond with representation of attachment'
+    end
+
+    context 'when no file present in params' do
+      let(:invalid_params) { Hash[file: nil] }
+
+      before { post :create, attachment: invalid_params }
 
       it { is_expected.to respond_with :unprocessable_entity }
     end
 
-    context 'when valid' do
-      let(:valid_params) { attributes_for :attachment }
+    context 'when file extension not supported' do
+      let(:params) { attributes_for :unsupported_attachment }
 
-      before do
-        post :create, attachment: valid_params
-      end
+      before { post :create, attachment: params }
 
-      it { is_expected.to respond_with :created }
-      it_behaves_like 'respond with representation of attachment'
+      it { is_expected.to respond_with :unprocessable_entity }
     end
   end
 
