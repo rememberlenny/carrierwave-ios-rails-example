@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe API::V1::AttachmentsController do
   shared_examples_for 'respond with representation of attachment' do

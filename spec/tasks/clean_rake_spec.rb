@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 require 'rake'
 
 describe 'clean rake' do
