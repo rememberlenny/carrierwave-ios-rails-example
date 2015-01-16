@@ -36,6 +36,8 @@ RSpec.configure do |config|
   config.include Request::JsonHelpers, type: :controller
 
   config.after(:all) do
+    FileUtils.rm_rf("#{Rails.root}/tmp/spec")
+
     if Rails.env.test?
       FileUtils.rm_rf("#{Rails.root}/public/uploads/test")
     end

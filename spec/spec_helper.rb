@@ -22,3 +22,13 @@ def freeze_time(now = Time.now)
   allow(DateTime).to receive(:now) { datetime }
   allow(Time).to receive(:now) { time }
 end
+
+def fixture_file(filename)
+  spec_tmp = File.join(Rails.root, '/tmp/spec')
+  old_path = File.join(Rails.root, '/spec/fixtures/', filename)
+  new_path = File.join(spec_tmp, filename)
+
+  FileUtils.mkdir_p(spec_tmp) unless Dir.exists?(spec_tmp)
+  FileUtils.cp(old_path, new_path)
+  File.new(new_path)
+end
