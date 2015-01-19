@@ -60,7 +60,7 @@ end
 def fixture_file(filename)
   return '' if filename.blank?
   file_path = File.expand_path(Rails.root + 'spec/fixtures/' + filename)
-  File.read(file_path)
+  File.new(file_path)
 end
 
 def freeze_time(now = Time.now)
