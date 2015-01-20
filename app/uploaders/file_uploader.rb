@@ -22,10 +22,10 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   def supported_video_extenstions
-    %w(asf avi dvr-ms m1v mp2 mp2v mp4 mpe mpeg mpg mpv2 wm wmv)
+    %w(asf avi dvr-ms m1v m4v mp2 mp2v mp4 mpe mpeg mpg mpv2 wm wmv)
   end
   def supported_audio_extenstions
-    %w(acc aif aifc aiff asf au flac mp2 mp3 mpa snd wav wma)
+    %w(acc aif aifc aiff asf au flac m4v mp2 mp3 mpa snd wav wma)
   end
   def supported_image_extenstions
     %w(bmp dib emf gif jfif jpe jpeg jpg png tif tiff wmf)
