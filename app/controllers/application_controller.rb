@@ -4,8 +4,4 @@ class ApplicationController < ActionController::Base
   end
 
   protect_from_forgery with: :exception
-
-  def current_user
-    @current_user
-  end
 end

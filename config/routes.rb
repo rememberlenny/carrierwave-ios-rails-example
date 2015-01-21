@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
-  devise_ios_rails_for :users
 
   root 'attachments#index'
 
