@@ -1,6 +1,4 @@
-class API::V1::AttachmentsController < ApplicationController
-  respond_to :json
-
+class API::V1::AttachmentsController < API::V1::ApiController
   expose(:attachment, attributes: :attachment_params)
   expose(:attachments) { Attachment.all }
 
