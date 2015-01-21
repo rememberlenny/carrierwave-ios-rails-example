@@ -5,8 +5,6 @@ class FileUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-  storage :file
-
   # Override the directory where uploaded files will be stored.
   def store_dir
     "uploads/#{Rails.env}/#{model.class.to_s.underscore}/#{model.id}"
