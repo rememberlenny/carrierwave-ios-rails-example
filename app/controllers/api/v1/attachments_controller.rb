@@ -12,7 +12,7 @@ class API::V1::AttachmentsController < API::V1::ApiController
 
   def download
     data = attachment.file_data
-    response.headers['Content-Length'] = data.size
+    response.headers['Content-Length'] = data.size.to_s
     send_data data,
               filename: attachment.filename,
               disposition: 'attachment',

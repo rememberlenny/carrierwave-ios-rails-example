@@ -43,7 +43,7 @@ describe API::V1::AttachmentsController do
     end
 
     it 'sets proper Content-Length header' do
-      expect(response.headers).to include('Content-Length' => 155063)
+      expect(response.headers).to include('Content-Length' => '155063')
     end
   end
 
