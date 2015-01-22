@@ -11,7 +11,9 @@ class API::V1::AttachmentsController < API::V1::ApiController
   end
 
   def download
-    send_data attachment.file_data,
+    data = attachment.file_data
+    response.headers['Content-Length'] = data.size
+    send_data data,
               filename: attachment.filename,
               disposition: 'attachment',
               status: :ok

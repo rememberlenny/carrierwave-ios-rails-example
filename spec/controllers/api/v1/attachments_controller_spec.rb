@@ -41,6 +41,10 @@ describe API::V1::AttachmentsController do
     it 'sends file data' do
       expect(response.body).to eq(attachment.file.read)
     end
+
+    it 'sets proper Content-Length header' do
+      expect(response.headers).to include('Content-Length' => 155063)
+    end
   end
 
   describe 'POST create' do
