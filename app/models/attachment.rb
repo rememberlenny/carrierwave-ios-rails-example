@@ -6,4 +6,9 @@ class Attachment < ActiveRecord::Base
   scope :old, -> { where('created_at < ?', Time.now - OLD_AFTER) }
 
   validates :file, presence: true
+
+  def filename
+    return unless file.present?
+    File.basename(file.path)
+  end
 end

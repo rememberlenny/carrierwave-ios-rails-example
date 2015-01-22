@@ -11,6 +11,24 @@ describe Attachment do
     it { is_expected.to validate_presence_of :file }
   end
 
+  describe '#filename' do
+    context 'when no file present' do
+      subject { build :attachment, file: nil }
+
+      it 'returns nil' do
+        expect(subject.filename).to be_nil
+      end
+    end
+
+    context 'when file present' do
+      subject { create :attachment }
+
+      it 'returns it\'s name' do
+        expect(subject.filename).to eq 'netguru.jpg'
+      end
+    end
+  end
+
   describe 'scopes' do
     describe '.old' do
       subject { Attachment.old }
