@@ -11,4 +11,9 @@ class Attachment < ActiveRecord::Base
     return unless file.present?
     File.basename(file.path)
   end
+
+  def file_data
+    return unless file.present?
+    file.read
+  end
 end
