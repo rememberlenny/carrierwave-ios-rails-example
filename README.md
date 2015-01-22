@@ -19,20 +19,20 @@ You can find some guidelines on how to install the above [on mac][mac_guidelines
 Config
 ==================
 
-### Database
-
-- copy config/database.yml.sample to config/database.yml `cp config/database.yml.sample config/database.yml`
-- run in terminal respectively:
-  - `rake db:create`
-  - `rake db:migrate`
-  - `rake db:seed`
-
 ### Environment variables
 
 - copy .env.sample to .env `cp .env.sample .env`
 - fill in your domain name and url - in the local environment it's normally `localhost` and `http://localhost:3000` respectively.
 - you will need to generate your own `SECRET_KEY_BASE` by running `rake secret` and pasting the output into .env file.
 - you can omit Rollbar config in the development environment.
+
+### Database
+
+- copy config/database.yml.sample to config/database.yml `cp config/database.yml.sample config/database.yml`
+- run in terminal respectively:
+  - `rake db:create`
+  - `rake db:schema:load`
+  - `rake db:seed`
 
 ### Guardfile
 
