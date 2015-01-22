@@ -10,6 +10,13 @@ class API::V1::AttachmentsController < API::V1::ApiController
     render json: attachment, status: :ok
   end
 
+  def download
+    send_data attachment.file_data,
+              filename: attachment.filename,
+              disposition: 'attachment',
+              status: :ok
+  end
+
   def create
     if attachment.save
       response.location = api_v1_attachment_url attachment

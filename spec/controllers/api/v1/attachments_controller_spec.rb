@@ -31,6 +31,18 @@ describe API::V1::AttachmentsController do
     it_behaves_like 'respond with representation of attachment'
   end
 
+  describe 'GET download' do
+    let(:attachment) { create :attachment, file: fixture_file('bison.mp3') }
+
+    before { get :download, id: attachment.id }
+
+    it { is_expected.to respond_with :ok }
+
+    it 'sends file data' do
+      expect(response.body).to eq(attachment.file.read)
+    end
+  end
+
   describe 'POST create' do
     context 'when valid params' do
       let(:valid_params) { attributes_for :attachment }
