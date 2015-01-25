@@ -49,7 +49,7 @@ describe Attachment do
 
       before(:each) do
         freeze_time('2015-01-01 10:15 UTC')
-        stub_const('Attachment::OLD_AFTER', 10.minutes)
+        stub_const('Attachment::DESTROY_DELAY', 10.minutes)
       end
 
       it 'returns only records older than threshold' do

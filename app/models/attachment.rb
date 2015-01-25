@@ -1,11 +1,11 @@
 class Attachment < ActiveRecord::Base
-  OLD_AFTER = 10.minutes
-
   mount_uploader :file, FileUploader
 
-  scope :old, -> { where('created_at < ?', Time.now - OLD_AFTER) }
+  DESTROY_DELAY = 10.minutes
 
   validates :file, presence: true
+
+  scope :old, -> { where('created_at < ?', Time.now - DESTROY_DELAY) }
 
   def filename
     return unless file.present?

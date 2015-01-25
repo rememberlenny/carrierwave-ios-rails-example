@@ -1,19 +1,19 @@
 require 'spec_helper'
 require 'rake'
 
-describe 'clean rake' do
+describe 'destroy rake' do
   before(:all) do
-    load File.expand_path('../../../lib/tasks/clean.rake', __FILE__)
+    load File.expand_path('../../../lib/tasks/destroy.rake', __FILE__)
     Rake::Task.define_task(:environment)
   end
 
-  describe 'clean:old_attachments' do
+  describe 'destroy:old_attachments' do
     let!(:old_attachment) { create(:attachment) }
     let!(:young_attachment) { create(:attachment) }
 
     let(:run_rake_task) do
-      Rake::Task['clean:old_attachments'].reenable
-      Rake.application.invoke_task 'clean:old_attachments'
+      Rake::Task['destroy:old_attachments'].reenable
+      Rake.application.invoke_task 'destroy:old_attachments'
     end
 
     before(:each) do

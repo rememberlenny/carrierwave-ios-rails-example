@@ -1,3 +1,3 @@
 every 15.minutes do
-  rake 'clean:old_attachments'
+  rake 'destroy:old_attachments'
 end
