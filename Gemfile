@@ -19,6 +19,8 @@ gem 'thin'
 gem 'active_model_serializers'
 gem 'whenever', require: false
 
+gem 'unicorn'
+
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
