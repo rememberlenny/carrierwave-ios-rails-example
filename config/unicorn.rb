@@ -8,6 +8,11 @@ before_fork do |server, worker|
     Process.kill 'QUIT', Process.pid
   end
 
+  unless @dj_pid
+    @dj_pid = spawn('bundle exec delayed_job')
+    Rails.logger.info("Spawned DelayedJob process (pid: #{@dj_pid} | worker: #{worker.nr})")
+  end
+
   defined?(ActiveRecord::Base) and
       ActiveRecord::Base.connection.disconnect!
 end
