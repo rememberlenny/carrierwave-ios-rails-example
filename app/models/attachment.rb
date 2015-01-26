@@ -1,11 +1,8 @@
 class Attachment < ActiveRecord::Base
   mount_uploader :file, FileUploader
 
-  DESTROY_DELAY = 10.minutes
-
+  after_create :delayed_destroy
   validates :file, presence: true
-
-  scope :old, -> { where('created_at < ?', Time.now - DESTROY_DELAY) }
 
   def filename
     return unless file.present?
@@ -15,5 +12,11 @@ class Attachment < ActiveRecord::Base
   def file_data
     return unless file.present?
     file.read
+  end
+
+  private
+
+  def delayed_destroy
+    AttachmentDestroyer.perform(self.id)
   end
 end
