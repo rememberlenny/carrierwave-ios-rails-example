@@ -9,7 +9,7 @@ before_fork do |server, worker|
   end
 
   unless @dj_pid
-    @dj_pid = spawn('bundle exec delayed_job')
+    @dj_pid = spawn('rake jobs:work')
     Rails.logger.info("Spawned DelayedJob process (pid: #{@dj_pid} | worker: #{worker.nr})")
   end
 
