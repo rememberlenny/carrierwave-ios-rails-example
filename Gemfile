@@ -17,8 +17,8 @@ gem 'decent_exposure'
 gem 'activeadmin', github: 'activeadmin'
 gem 'thin'
 gem 'active_model_serializers'
-gem 'whenever', require: false
 
+gem 'delayed_job_active_record'
 gem 'unicorn'
 
 group :development do
