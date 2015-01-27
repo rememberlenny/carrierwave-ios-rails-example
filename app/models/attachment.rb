@@ -17,6 +17,6 @@ class Attachment < ActiveRecord::Base
   private
 
   def delayed_destroy
-    AttachmentDestroyer.perform(self.id)
+    AttachmentDestroyer.perform(id)
   end
 end

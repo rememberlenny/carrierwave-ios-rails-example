@@ -7,6 +7,6 @@ class AttachmentDestroyer
       attachment.destroy if attachment
     end
 
-    handle_asynchronously :perform, run_at: Proc.new { DESTROY_AFTER.from_now }
+    handle_asynchronously :perform, run_at: proc { DESTROY_AFTER.from_now }
   end
 end

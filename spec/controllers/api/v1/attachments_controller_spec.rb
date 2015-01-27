@@ -27,7 +27,7 @@ describe API::V1::AttachmentsController do
 
     before { get :show, id: attachment.id }
 
-    it { is_expected.to respond_with :ok}
+    it { is_expected.to respond_with :ok }
     it_behaves_like 'respond with representation of attachment'
   end
 
