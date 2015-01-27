@@ -1,0 +1,13 @@
+test:
+  override:
+    - bundle exec rspec spec
+    - bundle exec rake spec:javascript
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - heroku maintenance:on --app carrierwave-ios-backend
+      - git push git@heroku.com:carrierwave-ios-backend.git $CIRCLE_SHA1:master
+      - heroku run rake db:migrate --app carrierwave-ios-backend
+      - heroku maintenance:off --app carrierwave-ios-backend
