@@ -22,11 +22,17 @@ Here is the list of endpoints:
 
 You can test the API with some old school curl commands:
 - View all attachments
-`curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+```bash
+ curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments
+```
 - Create attachment
-`curl --form attachment[file]=@/Path/to/file.png https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+```bash
+curl --form attachment[file]=@/Path/to/file.png https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments
+```
 - View created attachment
-`curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>`
+```bash
+curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>
+```
 
 After the attachment has been created, you can directly download it using this address:
 `https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>/download`
@@ -87,7 +93,10 @@ To upload project to Heroku:
 - run `heroku run rake db:migrate` - to apply migrations
 - run `heroku restart` - to restart app's server
 - run `heroku open` - to open the app in your browser
-- test your app running `curl --form attachment[file]=@/path/to/image.png https://<your heroku app name>.herokuapp.com/api/v1/attachments`
+- test your app running 
+```bash
+curl --form attachment[file]=@/path/to/image.png https://<your heroku app name>.herokuapp.com/api/v1/attachments
+```
 
 Info
 ============
