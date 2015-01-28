@@ -86,6 +86,32 @@ To upload project to Heroku:
 - run `heroku open` - to open the app in your browser
 - test your app running `curl --form attachment[file]=@/path/to/image.png https://<your heroku app name>.herokuapp.com/api/v1/attachments`
 
+Info
+============
+
+### Authentication
+
+By default API doesn't implement any specific authentication mechanism, so if you want to authenticate the requests, you will have to implement it by yourself.
+
+### Supported file extensions
+
+Since we don't want users to upload anything other than media files to the backend, there is a whitelist of supported extensions located in `app/uploaders/file_uploader.rb`.
+If you want to add or remove extensions from whitelist, just modify the contents of `.supported_extensions` class method and restart the server.
+
+### Auto-removing attachments
+
+Starting Unicorn server using the supplied unicorn config file (`config/unicorn.rb`) automatically starts the DelayedJob process, which periodically checks for queued jobs.
+By default creating an Attachment sets a delayed job, that destroys the attachment after 10 minutes. If you opt to use some other server but would like attachments to be 
+auto removed, you should start the DelayedJobs process manually with `rake jobs:work`. If you would like to change the period after which attachments are removed,
+just change the `DESTROY_AFTER` const located in `app/workers/attachment_destroyer.rb`. If you don't want attachments to be auto removed, you should delete the 
+`after_create :delayed_destroy` hook located in `app/models/attachment.rb`.
+If you plan on uploading the app to Heroku, take into account that Heroku will use supplied Procfile by default, which will start Unicorn and DelayedJob process.
+You can find more info on DelayedJob [here](https://github.com/collectiveidea/delayed_job) and [here](https://devcenter.heroku.com/articles/delayed-job).
+
+### Configuration files
+
+You can find DelayedJob and Carrierwave configuration files at `config/initializers/delayed_job_config.rb` and `config/initializers/carrierwave.rb` respectively.
+
 Contribution
 ============
 
