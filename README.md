@@ -67,6 +67,7 @@ To upload project to Heroku:
   - `S3_KEY`, `S3_BUCKET_NAME` and `S3_SECRET` - your S3 bucket configuration
 - run `git push heroku master` - to push the project to Heroku
 - run `heroku run rake db:migrate` - to apply migrations
+- run `heroku restart` - to restart app's server
 - run `heroku open` - to open the app in your browser
 - test your app running `curl --form attachment[file]=@/path/to/image.png https://<your heroku app name>.herokuapp.com/api/v1/attachments`
 
