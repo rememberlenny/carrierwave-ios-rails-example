@@ -1,5 +1,8 @@
-Open Source Carrierwave iOS Rails Backend
+Carrierwave iOS Backend
 =========================================
+
+Carrierwave iOS API, built with Ruby on Rails. It is ready to work locally or on Heroku/S3 from the get-go. 
+
 
 Requirements
 ============
