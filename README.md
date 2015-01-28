@@ -12,18 +12,21 @@ which should give you enough time to test things out.
 
 Here is the list of endpoints:
 ```
-                      index attachments - GET      /api/v1/attachments
-                      create attachment - POST     /api/v1/attachments
-                        show attachment - GET      /api/v1/attachments/:id
-       directly download the attachment - GET      /api/v1/attachments/:id/download
-                      delete attachment - DELETE   /api/v1/attachments/:id
-    get supported attachment extensions - GET      /api/v1/attachments/supported_extensions
+                 index attachments - GET      /api/v1/attachments
+                 create attachment - POST     /api/v1/attachments
+                   show attachment - GET      /api/v1/attachments/:id
+  directly download the attachment - GET      /api/v1/attachments/:id/download
+                 delete attachment - DELETE   /api/v1/attachments/:id
+         view supported extensions - GET      /api/v1/attachments/supported_extensions
 ```
 
 You can test the API with some old school curl commands:
-View all attachments    - `curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
-Create attachment       - `curl --form attachment[file]=@/Path/to/file.png https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
-View created attachment - `curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>`
+- View all attachments
+`curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+- Create attachment
+`curl --form attachment[file]=@/Path/to/file.png https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+- View created attachment
+`curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>`
 
 After the attachment has been created, you can directly download it using this address:
 `https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>/download`
