@@ -42,30 +42,23 @@ You can find some guidelines on how to install the above [on mac][mac_guidelines
 
 ### Recommended
 
-Install git with:
-- on mac - `brew install git`
-- on ubuntu - `apt-get install git`
+Install git - on mac: `brew install git`, on ubuntu: `apt-get install git`
 
-### Cloning repository
+### Running app locally
 
 - clone repository with `git clone https://github.com/netguru/carrierwave-ios-rails-example.git`
-
-### Environment variables
+- run `bundle install`
 
 - copy .env.sample to .env `cp .env.sample .env`,
 - fill in your domain name and url - in the local environment it's normally `localhost` and `http://localhost:3000` respectively,
 - generate your own `SECRET_KEY_BASE` by running `rake secret` and pasting the output into .env file,
 - you can omit Rollbar config in the development environment.
 
-### Database
-
 - copy config/database.yml.sample to config/database.yml `cp config/database.yml.sample config/database.yml`
 - run in terminal respectively:
   - `rake db:create`
   - `rake db:schema:load`
   - `rake db:seed`
-
-### Guardfile
 
 - copy Guardfile.sample to Guardfile `cp Guardfile.sample Guardfile`
 
