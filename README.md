@@ -14,9 +14,11 @@ Requirements
 
 You can find some guidelines on how to install the above [on mac][mac_guidelines] and [on ubuntu][ubuntu_guidelines]
 
-#### Optional (recommended)
+#### Recommended
 
-- git (mac - `brew install git`, ubuntu - `apt-get install git`)
+Install git with:
+- on mac - `brew install git`
+- on ubuntu - `apt-get install git`
 
 
 Config
@@ -24,9 +26,9 @@ Config
 
 ### Environment variables
 
-- copy .env.sample to .env `cp .env.sample .env`
-- fill in your domain name and url - in the local environment it's normally `localhost` and `http://localhost:3000` respectively.
-- you will need to generate your own `SECRET_KEY_BASE` by running `rake secret` and pasting the output into .env file.
+- copy .env.sample to .env `cp .env.sample .env`,
+- fill in your domain name and url - in the local environment it's normally `localhost` and `http://localhost:3000` respectively,
+- generate your own `SECRET_KEY_BASE` by running `rake secret` and pasting the output into .env file,
 - you can omit Rollbar config in the development environment.
 
 ### Database
