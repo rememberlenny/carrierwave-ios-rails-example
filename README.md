@@ -6,7 +6,7 @@ Carrierwave iOS API, built with Ruby on Rails. It is ready to work locally or on
 API
 ===================
 
-We've setup a demo of the API at this URL - [https://carrierwave-ios-rails-example.herokuapp.com][heroku_url].
+We've setup a demo of the API at this URL - [https://carrierwave-ios-backend.herokuapp.com/][heroku_url].
 Bear in mind that every attachment you add to the server, is automatically destroyed after 10 minutes, 
 which should give you enough time to test things out.
 
@@ -130,7 +130,7 @@ Here's a few guidelines to follow:
 
 Copyright  2015 © [Netguru][netguru_url], released under the New BSD License
 
-[heroku_url]: https://carrierwave-ios-rails-example.herokuapp.com
+[heroku_url]: https://carrierwave-ios-backend.herokuapp.com/
 [heroku_toolbelt]: https://devcenter.heroku.com/articles/getting-started-with-ruby#set-up
 [heroku_vars]: https://devcenter.heroku.com/articles/getting-started-with-ruby#define-config-vars
 [ruby]: https://www.ruby-lang.org
