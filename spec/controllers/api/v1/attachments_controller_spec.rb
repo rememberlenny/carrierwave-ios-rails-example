@@ -47,6 +47,14 @@ describe API::V1::AttachmentsController do
     end
   end
 
+  describe 'GET supported_extensions' do
+    before { get :supported_extensions }
+
+    it 'returns extensions supported by FileUploader' do
+      expect(json_response).to eq FileUploader.supported_extensions
+    end
+  end
+
   describe 'POST create' do
     context 'when valid params' do
       let(:valid_params) { attributes_for :attachment }

@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :attachments, only: [:index, :show, :create, :destroy, :download] do
+      resources :attachments do
         get :download, on: :member
+        get :supported_extensions, on: :collection
       end
     end
   end

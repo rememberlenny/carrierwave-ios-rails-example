@@ -33,6 +33,10 @@ class API::V1::AttachmentsController < API::V1::ApiController
     head status
   end
 
+  def supported_extensions
+    render json: FileUploader.supported_extensions.to_json
+  end
+
   private
 
   def attachment_params
