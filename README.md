@@ -3,9 +3,35 @@ Carrierwave iOS Backend
 
 Carrierwave iOS API, built with Ruby on Rails. It is ready to work locally or on Heroku/S3 from the get-go. 
 
+API
+===================
 
-Requirements
-============
+We've setup a demo of the API at this URL - https://carrierwave-ios-rails-example.herokuapp.com.
+Bear in mind that every attachment you add to the server, is automatically destroyed after 10 minutes, 
+which should give you enough time to test things out.
+
+Here is the list of endpoints:
+```
+                      index attachments - GET      /api/v1/attachments
+                      create attachment - POST     /api/v1/attachments
+                        show attachment - GET      /api/v1/attachments/:id
+       directly download the attachment - GET      /api/v1/attachments/:id/download
+                      delete attachment - DELETE   /api/v1/attachments/:id
+    get supported attachment extensions - GET      /api/v1/attachments/supported_extensions
+```
+
+You can test the API with some old school curl commands:
+View all attachments    - `curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+Create attachment       - `curl --form attachment[file]=@/Path/to/file.png https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments`
+View created attachment - `curl https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>`
+
+After the attachment has been created, you can directly download it using this address:
+`https://carrierwave-ios-backend.herokuapp.com/api/v1/attachments/<created attachment id>/download`
+
+Config
+==================
+
+### Required
 
 | Name |  Version |
 | :--: | :---: |
@@ -19,10 +45,6 @@ You can find some guidelines on how to install the above [on mac][mac_guidelines
 Install git with:
 - on mac - `brew install git`
 - on ubuntu - `apt-get install git`
-
-
-Config
-==================
 
 ### Cloning repository
 
