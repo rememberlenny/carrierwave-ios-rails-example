@@ -18,7 +18,7 @@ class FileUploader < CarrierWave::Uploader::Base
     VIDEO_EXTENSIONS = %w(asf avi dvr-ms m1v m4v mp2 mp2v mp4 mpe mpeg mpg mpv2
                           wm wmv)
 
-    def default_extensions
+    def supported_extensions
       VIDEO_EXTENSIONS + AUDIO_EXTENSIONS + IMAGE_EXTENSIONS
     end
   end
