@@ -1,9 +1,6 @@
 class AttachmentsController < ApplicationController
   expose(:attachments) { Attachment.all }
 
-  def index
-  end
-
   private
 
   def attachment_params
