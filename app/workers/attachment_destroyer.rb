@@ -3,7 +3,7 @@ class AttachmentDestroyer
 
   class << self
     def perform(attachment_id)
-      attachment = Attachment.find(attachment_id)
+      attachment = Attachment.where(id: attachment_id).first
       attachment.destroy if attachment
     end
 
